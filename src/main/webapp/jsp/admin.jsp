@@ -14,10 +14,35 @@
         <div class="admin-stat"><h3>Revenue</h3><h1>₹<%=request.getAttribute("revenue")%></h1></div>
     </div>
     <div class="section grid">
-        <div class="dashboard-card"><h2>Manage Restaurants</h2><p class="muted">Add, update, or remove restaurant listings.</p></div>
-        <div class="dashboard-card"><h2>Manage Menu</h2><p class="muted">Maintain food items, prices, and availability.</p></div>
-        <div class="dashboard-card"><h2>Manage Orders</h2><p class="muted">Update order statuses from pending to delivered.</p></div>
-        <div class="dashboard-card"><h2>Manage Users</h2><p class="muted">Review customer and admin accounts.</p></div>
+        <a href="<%=request.getContextPath()%>/admin/restaurants" class="dashboard-card">
+    <h2>🍽️ Manage Restaurants</h2>
+    <p class="muted">Add, update, or remove restaurant listings.</p>
+</a>
+        <a href="<%=request.getContextPath()%>/admin/menu" class="dashboard-card">
+    <h2>🍔 Manage Menu</h2>
+    <p class="muted">Maintain food items, prices, and availability.</p>
+</a>
+
+<a href="<%=request.getContextPath()%>/admin/orders"
+   class="dashboard-card">
+
+    <h2>📦 Manage Orders</h2>
+
+    <p class="muted">
+        View and update customer orders.
+    </p>
+
+</a>
+<a href="<%=request.getContextPath()%>/admin/users"
+   class="dashboard-card">
+
+    <h2>👥 Manage Users</h2>
+
+    <p class="muted">
+        View, manage and remove customer accounts.
+    </p>
+
+</a>
     </div>
 </main>
 </body>

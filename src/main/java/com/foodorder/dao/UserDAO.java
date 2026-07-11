@@ -31,4 +31,5 @@ public interface UserDAO {
 
     // Count Users
     int count();
+    
 }

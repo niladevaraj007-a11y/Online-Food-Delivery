@@ -76,10 +76,10 @@
                         <span class="rating">⭐ <%= r.getRating() %></span>
                     </div>
 
-                    <a href="<%=request.getContextPath()%>/restaurant?id=<%= r.getRestaurantId() %>"
-                       class="btn">
-                        View Menu
-                    </a>
+                    <a href="<%=request.getContextPath()%>/menu?restaurantId=<%= r.getRestaurantId() %>"
+                    class="btn">
+                      View Menu
+                     </a>
 
                 </div>
             </div>

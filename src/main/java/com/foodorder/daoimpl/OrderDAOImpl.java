@@ -132,4 +132,26 @@ public class OrderDAOImpl implements OrderDAO {
             return rs.next() ? rs.getDouble(1) : 0;
         } catch (SQLException e) { e.printStackTrace(); return 0; }
     }
+    @Override
+    public Order getById(int orderId) {
+
+        String sql = "SELECT * FROM orders WHERE order_id=?";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, orderId);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return map(rs);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }

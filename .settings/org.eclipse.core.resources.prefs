@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/jsp/editRestaurant.jsp=UTF-8
+encoding//src/main/webapp/jsp/manageMenu.jsp=UTF-8
+encoding//src/main/webapp/jsp/manageUsers.jsp=UTF-8
+encoding//src/main/webapp/jsp/myOrders.jsp=UTF-8
+encoding//src/main/webapp/jsp/trackOrder.jsp=UTF-8
 encoding/<project>=UTF-8

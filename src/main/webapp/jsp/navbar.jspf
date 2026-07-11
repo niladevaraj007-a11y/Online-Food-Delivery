@@ -11,7 +11,15 @@
             <a href="<%=request.getContextPath()%>/jsp/home.jsp">Home</a>
             <a href="<%=request.getContextPath()%>/restaurants">Restaurants</a>
             <% if (navUser != null) { %>
-                <a href="<%=request.getContextPath()%>/orders">My Orders</a>
+                
+
+<a href="<%=request.getContextPath()%>/myOrders">
+
+My Orders
+
+</a>
+
+
                 <a href="<%=request.getContextPath()%>/cart">Cart (<span class="cart-count"><%=cartCount%></span>)</a>
                 <a href="<%=request.getContextPath()%>/profile">Profile</a>
                 <% if ("ADMIN".equals(navUser.getRole())) { %><a href="<%=request.getContextPath()%>/admin">Admin</a><% } %>
