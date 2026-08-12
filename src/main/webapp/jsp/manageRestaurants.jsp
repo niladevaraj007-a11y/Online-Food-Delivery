@@ -75,18 +75,20 @@
 
             <td>⭐ <%=r.getRating()%></td>
 
-            <td>
+           <td>
 
-             <a href="<%=request.getContextPath()%>/editRestaurant?id=<%=r.getRestaurantId()%>"
-   class="btn">
-    Edit
-</a>
-               <a href="<%=request.getContextPath()%>/deleteRestaurant?id=<%=r.getRestaurantId()%>"
-   class="btn btn-danger"
-   onclick="return confirm('Are you sure you want to delete this restaurant?');">
-    Delete
-</a>
-            </td>
+    <a href="<%=request.getContextPath()%>/editRestaurant?id=<%=r.getRestaurantId()%>"
+       class="btn">
+        Edit
+    </a>
+
+    <a href="<%=request.getContextPath()%>/deleteRestaurant?id=<%=r.getRestaurantId()%>"
+       class="btn delete-btn"
+       onclick="return confirm('Are you sure you want to delete this restaurant?');">
+        Delete
+    </a>
+
+</td>
 
         </tr>
 

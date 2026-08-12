@@ -96,18 +96,18 @@ width="70">
 
 <td>
 
-<a class="btn"
-href="<%=request.getContextPath()%>/editMenu?id=<%=m.getMenuId()%>">
-Edit
-</a>
+    <a href="<%=request.getContextPath()%>/editMenu?id=<%=m.getMenuId()%>"
+       class="btn">
+        Edit
+    </a>
 
-<a href="<%=request.getContextPath()%>/deleteMenu?id=<%=m.getMenuId()%>"
-   class="btn btn-danger"
-   onclick="return confirm('Are you sure you want to delete this menu item?');">
+    <a href="<%=request.getContextPath()%>/deleteMenu?id=<%=m.getMenuId()%>"
+       class="btn delete-btn"
+       onclick="return confirm('Are you sure you want to delete this menu item?');">
+        Delete
+    </a>
 
-    Delete
-
-</a></td>
+</td>
 
 </tr>
 

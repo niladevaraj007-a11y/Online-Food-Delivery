@@ -154,4 +154,30 @@ public class OrderDAOImpl implements OrderDAO {
 
         return null;
     }
+    @Override
+    public int getOrderCountByStatus(String status) {
+
+        int count = 0;
+
+        String sql = "SELECT COUNT(*) FROM orders WHERE status = ?";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, status);
+
+            try (ResultSet rs = ps.executeQuery()) {
+
+                if (rs.next()) {
+                    count = rs.getInt(1);
+                }
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return count;
+    }
 }

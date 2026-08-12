@@ -29,7 +29,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <i class="fa-solid fa-burger"></i>
 
-<h1>Add Menu Item</h1>
+<a href="<%=request.getContextPath()%>/addMenu" class="btn">
+    Add Menu
+</a>
 
 <p>Add delicious food items for your restaurant.</p>
 

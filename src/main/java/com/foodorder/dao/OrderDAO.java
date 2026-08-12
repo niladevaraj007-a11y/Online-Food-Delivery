@@ -23,4 +23,8 @@ public interface OrderDAO {
     int count();
 
     double revenue();
+
+    // Dashboard Analytics
+    int getOrderCountByStatus(String status);
+
 }

@@ -24,36 +24,47 @@ public class AdminServlet extends HttpServlet {
             throws ServletException, IOException {
 
         try {
+
             System.out.println("===== AdminServlet Executed =====");
 
             User user = AuthUtil.requireUser(req, resp);
-            System.out.println("User = " + user);
 
             if (user == null) {
                 return;
             }
 
-            System.out.println("Role = " + user.getRole());
+            System.out.println("Logged in User : " + user.getUsername());
+            System.out.println("Role : " + user.getRole());
 
+            // Dashboard Statistics
             int users = userDAO.count();
             int restaurants = restaurantDAO.count();
             int orders = orderDAO.count();
             double revenue = orderDAO.revenue();
 
-            System.out.println("Users = " + users);
-            System.out.println("Restaurants = " + restaurants);
-            System.out.println("Orders = " + orders);
-            System.out.println("Revenue = " + revenue);
+            // Order Status Statistics
+            int pendingOrders = orderDAO.getOrderCountByStatus("Pending");
+            int preparingOrders = orderDAO.getOrderCountByStatus("Preparing");
+            int outForDeliveryOrders = orderDAO.getOrderCountByStatus("Out For Delivery");
+            int deliveredOrders = orderDAO.getOrderCountByStatus("Delivered");
 
+            // Send Data to JSP
             req.setAttribute("totalUsers", users);
             req.setAttribute("totalRestaurants", restaurants);
             req.setAttribute("totalOrders", orders);
             req.setAttribute("revenue", String.format("%.2f", revenue));
 
+            req.setAttribute("pendingOrders", pendingOrders);
+            req.setAttribute("preparingOrders", preparingOrders);
+            req.setAttribute("outForDeliveryOrders", outForDeliveryOrders);
+            req.setAttribute("deliveredOrders", deliveredOrders);
+
+            // Forward to Dashboard
             req.getRequestDispatcher("/jsp/admin.jsp").forward(req, resp);
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw new ServletException("Error loading admin dashboard.", e);
         }
     }
 }
